@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website ផ្ទាល់ខ្លួនរបស់ខ្ញុំ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruuy+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kantumruuy Pro', sans-serif;
+        }
+
+        body {
+            background-color: #0f172a; /* ប្តូរពណ៌ផ្ទៃក្រោយទៅជាពណ៌ងងឹតបែប Tech */
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: #1e293b;
+            max-width: 480px;
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            padding: 35px 25px;
+            text-align: center;
+            border: 1px solid #334155;
+        }
+
+        /* Profile Section */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #38bdf8;
+            margin-bottom: 15px;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .bio {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        /* Subjects Section */
+        .section-title {
+            font-size: 16px;
+            color: #38bdf8;
+            margin-bottom: 15px;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .subjects-list {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+
+        .subject-item {
+            background: #0f172a;
+            margin-bottom: 12px;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            border: 1px solid #334155;
+            transition: 0.3s ease;
+        }
+
+        .subject-item:hover {
+            transform: translateY(-2px);
+            border-color: #38bdf8;
+            background: #1e293b;
+        }
+
+        .subject-item i {
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        /* ពណ៌ Icon តាមមុខវិជ្ជា */
+        .fa-html5 { color: #f06529; }
+        .fa-js { color: #f7df1e; }
+        .fa-python { color: #3776ab; }
+
+        /* Social Media Section */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #334155;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #cbd5e1;
+            font-size: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-icon.facebook:hover { background: #1877f2; color: white; }
+        .social-icon.telegram:hover { background: #0088cc; color: white; }
+        .social-icon.tiktok:hover { background: #000000; color: white; border: 1px solid #fff; }
+        .social-icon.instagram:hover { background: #e1306c; color: white; }
+    </style>
+</head>
+<div class="container">
+        <img src="https://scontent.fpnh10-1.fna.fbcdn.net/v/t39.30808-6/651211946_952855503944057_6154298044048281697_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHtWs2nGmxOfxGddRAYjMBKqjTeeJgMzFWqNN54mAzMVcF9E8WJHByqUdIDU0Ybv2xEDlFmC8vGwoM5k4rLnNol&_nc_ohc=oleIVORsfS8Q7kNvwGv9MGj&_nc_oc=Ado3Tb77Du5bvomOAKE5YMHFvEqEFrV_Q2vkJ3t8FczEo-WGaB8VzgCKSHortzLQYsE&_nc_zt=23&_nc_ht=scontent.fpnh10-1.fna&_nc_gid=JHcR1l_ydFI9awM4OuLCGA&_nc_ss=7b2a8&oh=00_Af6P-3yFRlr47_t-5QLTCM2uuXIIFkekkKngfBNzVKY2mA&oe=6A16FD15" alt="រូបថត Profile" class="profile-img">
+        <div class="name">Mao Sa Thik</div>
+        <div class="bio">និស្សិតផ្នែកព័ត៌មានវិទ្យា</div>
+
+        <div class="section-title">មុខវិជ្ជា Programming</div>
+        <ul class="subjects-list">
+            <li class="subject-item">
+                <i class="fa-brands fa-html5"></i> 
+                <div>
+                    <strong style="display:block; color:#fff;">Web Development</strong>
+                    <a href="phek.html">ប្រព័ន្ធគណនាសិស្ស</a>
+                </div>
+            </li>
+            <li class="subject-item">
+                <i class="fa-brands fa-js"></i> 
+                <div>
+                    <strong style="display:block; color:#fff;">ទាយលេខរបស់ហោរ៉ាធិក</strong>
+                    <a href="pek1.html">ទាយលេខទូរស័ព្ទ</a>
+                </div>
+            </li>
+            <li class="subject-item">
+                <i class="fa-brands fa-python"></i> 
+                <div>
+                    <strong style="display:block; color:#fff;">Python Programming</strong>
+                    <span style="font-size:12px; color:#94a3b8;">សិក្សាអំពីការវិភាគទិន្នន័យ និង AI</span>
+                </div>
+            </li>
+        </ul>
+
+        <div class="section-title">បណ្តាញសង្គម</div>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/194cmj2WDQ/?mibextid=wwXIfr" class="social-icon facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://t.me/Thik708090" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://www.tiktok.com/@zea__thik18?_r=1&_t=ZS-96ag5OWMQ4N" class="social-icon tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>
+<body>

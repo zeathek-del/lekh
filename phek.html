@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ប្រព័ន្ធគណនាលទ្ធផលសិស្ស</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Khmer OS Battambang", Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:700px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:30px;
+    color:white;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.title h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.title p{
+    color:#cbd5e1;
+    font-size:15px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#f1f5f9;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:rgba(255,255,255,0.12);
+    color:white;
+    font-size:16px;
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.3s;
+}
+
+input:focus{
+    border-color:#3b82f6;
+    background:rgba(255,255,255,0.18);
+}
+
+input::placeholder{
+    color:#cbd5e1;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+.result-card{
+    margin-top:30px;
+    background:rgba(255,255,255,0.08);
+    border-radius:20px;
+    padding:25px;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.result-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:20px;
+    color:#93c5fd;
+}
+
+.result-line{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.result-line:last-child{
+    border-bottom:none;
+}
+
+.result-label{
+    color:#cbd5e1;
+}
+
+.result-value{
+    font-weight:bold;
+    font-size:17px;
+}
+
+.status-badge{
+    padding:10px 18px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
+    color:white;
+}
+
+.status-pass{
+    background:#22c55e;
+}
+
+.status-warning{
+    background:#f59e0b;
+}
+
+.status-danger{
+    background:#ef4444;
+}
+
+@media(max-width:600px){
+
+    .container{
+        padding:20px;
+    }
+
+    .title h2{
+        font-size:24px;
+    }
+
+    .result-line{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:5px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">
+        <h2>
+            <i class="fa-solid fa-user-graduate"></i>
+            ប្រព័ន្ធគណនាលទ្ធផលសិស្ស
+        </h2>
+
+        <p>គណនាលទ្ធផលប្រចាំឆមាស</p>
+    </div>
+
+    <!-- Input -->
+
+    <div class="form-group">
+        <label>ឈ្មោះសិស្ស</label>
+        <input type="text" id="studentName" placeholder="បញ្ចូលឈ្មោះសិស្ស">
+    </div>
+
+    <div class="row">
+
+        <div class="form-group">
+            <label>ចំនួនអវត្តមាន</label>
+            <input type="number" id="absences" value="0">
+        </div>
+
+        <div class="form-group">
+            <label>ពិន្ទុពាក់កណ្ដាលឆមាស</label>
+            <input type="number" id="midtermScore" value="0">
+        </div>
+
+        <div class="form-group">
+            <label>ពិន្ទុចុងឆមាស</label>
+            <input type="number" id="finalScore" value="0">
+        </div>
+
+    </div>
+
+    <!-- Result -->
+
+    <div class="result-card">
+
+        <div class="result-title">
+            <i class="fa-solid fa-chart-column"></i>
+            លទ្ធផលឆមាស
+        </div>
+
+        <div class="result-line">
+            <span class="result-label">ឈ្មោះសិស្ស</span>
+            <span class="result-value" id="outName">-</span>
+        </div>
+
+        <div class="result-line">
+            <span class="result-label">ពិន្ទុពាក់កណ្ដាលឆមាស</span>
+            <span class="result-value" id="outMidterm">0</span>
+            </div>
+
+        <div class="result-line">
+            <span class="result-label">ពិន្ទុចុងឆមាស</span>
+            <span class="result-value" id="outFinal">0</span>
+        </div>
+
+        <div class="result-line">
+            <span class="result-label">ពិន្ទុសរុប</span>
+            <span class="result-value" id="outTotal">0</span>
+        </div>
+
+        <div class="result-line">
+            <span class="result-label">ស្ថានភាពចុងក្រោយ</span>
+            <span class="status-badge" id="outStatus">-</span>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const studentNameInput = document.getElementById('studentName');
+const absencesInput = document.getElementById('absences');
+const midtermInput = document.getElementById('midtermScore');
+const finalInput = document.getElementById('finalScore');
+
+const outName = document.getElementById('outName');
+const outMidterm = document.getElementById('outMidterm');
+const outFinal = document.getElementById('outFinal');
+const outTotal = document.getElementById('outTotal');
+const outStatus = document.getElementById('outStatus');
+
+function calculateResult(){
+
+    const name = studentNameInput.value || "មិនមាន";
+    const absences = parseInt(absencesInput.value) || 0;
+    const midtermScore = parseFloat(midtermInput.value) || 0;
+    const finalScore = parseFloat(finalInput.value) || 0;
+
+    const totalScore = midtermScore + finalScore;
+
+    let resultStatus = "";
+    let statusClass = "";
+
+    if(absences >= 16){
+
+        resultStatus = "ត្រូវរៀនឡើងវិញ";
+        statusClass = "status-danger";
+
+    }
+
+    else if(absences >= 11 && absences <= 15){
+
+        resultStatus = "ប្រឡងសង";
+        statusClass = "status-warning";
+
+    }
+
+    else{
+
+        if(midtermScore < 20){
+
+            resultStatus = "ធ្លាក់";
+            statusClass = "status-danger";
+
+        }
+
+        else if(midtermScore >= 20 && totalScore < 60){
+
+            resultStatus = "ប្រឡងប៉ូវ";
+            statusClass = "status-warning";
+
+        }
+
+        else if(midtermScore >= 20 && totalScore >= 60){
+
+            resultStatus = "ជាប់";
+            statusClass = "status-pass";
+
+        }
+
+    }
+
+    outName.textContent = name;
+    outMidterm.textContent = midtermScore;
+    outFinal.textContent = finalScore;
+    outTotal.textContent = totalScore;
+
+    outStatus.textContent = resultStatus;
+    outStatus.className = "status-badge " + statusClass;
+
+}
+
+studentNameInput.addEventListener('input', calculateResult);
+absencesInput.addEventListener('input', calculateResult);
+midtermInput.addEventListener('input', calculateResult);
+finalInput.addEventListener('input', calculateResult);
+
+calculateResult();
+
+</script>
+
+</body>
+</html>
